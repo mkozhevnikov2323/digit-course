@@ -39,7 +39,8 @@
     "react/no-array-index-key": "off",
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "consistent-return": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "no-redeclare": "off"
   },
   "globals": {
     "__IS_DEV__": true

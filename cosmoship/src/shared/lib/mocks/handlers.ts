@@ -1,4 +1,5 @@
 import { http, HttpResponse } from 'msw';
+import { mockShipList } from './mockShipList';
 
 interface AuthRequestBody {
   email: string;
@@ -43,4 +44,7 @@ export const handlers = [
       },
     );
   }),
+  http.get('https://example.com/api/ships', () =>
+    HttpResponse.json(mockShipList),
+  ),
 ];

@@ -13,7 +13,7 @@ export const enum AppRoutes {
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
-  [AppRoutes.PRODUCT]: '/games/:productId',
+  [AppRoutes.PRODUCT]: '/product/:productId',
   [AppRoutes.CART]: '/cart',
   [AppRoutes.NOT_FOUND]: '*',
   [AppRoutes.SUCCESS]: '/success',

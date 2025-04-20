@@ -1,3 +1,4 @@
+import { ShipList } from '@/widgets/ShipList';
 import classNames from 'classnames';
 import React from 'react';
 
@@ -6,7 +7,11 @@ interface MainPageProps {
 }
 
 const MainPage = ({ className }: MainPageProps): React.ReactNode => {
-  return <div className={classNames([className])}>qwqwe</div>;
+  return (
+    <div className={classNames([className])}>
+      <ShipList />
+    </div>
+  );
 };
 
 export default MainPage;
