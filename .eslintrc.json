@@ -1,0 +1,47 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [".js", ".jsx", ".tsx"]
+      }
+    ],
+    "import/no-unresolved": "off",
+    "no-unused-vars": "warn",
+    "react/require-default-props": "off",
+    "react/function-component-definition": "off",
+    "no-shadow": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "warn",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "no-underscore-dangle": "off",
+    "i18next/no-literal-srting": "off",
+    "no-param-reassign": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/prop-types": "off",
+    "react/no-array-index-key": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "consistent-return": "off",
+    "class-methods-use-this": "off"
+  },
+  "globals": {
+    "__IS_DEV__": true
+  }
+}
