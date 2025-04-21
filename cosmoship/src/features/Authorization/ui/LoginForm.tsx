@@ -15,7 +15,11 @@ import { authApi } from '../api/authApi';
 import { useAuth } from '../model/context/AuthContext';
 import { AuthMode } from '../model/types/authSchema';
 
-export const LoginForm: React.FC = () => {
+interface LoginFormProps {
+  onClose?: () => void;
+}
+
+export const LoginForm: React.FC<LoginFormProps> = ({ onClose }) => {
   const [mode, setMode] = useState<AuthMode>('login');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -37,7 +41,7 @@ export const LoginForm: React.FC = () => {
           : await authApi.register(data);
 
       login(response.token);
-      console.log('Успешный вход:', response);
+      if (onClose) onClose();
     } catch (error: any) {
       if (
         error.response &&
@@ -52,9 +56,6 @@ export const LoginForm: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-
-  // Todo
-  console.log('token', token);
 
   return (
     <Container maxWidth="xs">
