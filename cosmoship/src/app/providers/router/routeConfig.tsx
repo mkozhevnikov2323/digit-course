@@ -2,6 +2,8 @@ import { RouteObject } from 'react-router-dom';
 
 import { MainPageAsync } from '@/pages/MainPage';
 import { ProductPageAsync } from '@/pages/ProductPage';
+import { CartPageAsync } from '@/pages/CartPage';
+import { Protected } from './ProtectedRoute';
 
 export const enum AppRoutes {
   MAIN = 'main',
@@ -30,7 +32,11 @@ export const routeConfig: Record<AppRoutes, RouteObject> = {
   },
   [AppRoutes.CART]: {
     path: RoutePath.cart,
-    element: null,
+    element: (
+      <Protected>
+        <CartPageAsync />
+      </Protected>
+    ),
   },
   [AppRoutes.NOT_FOUND]: {
     path: RoutePath.notFound,

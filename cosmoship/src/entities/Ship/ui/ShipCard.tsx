@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import { Ship } from '../model/types/shipSchema';
+import { AddToCartButton } from '@/features/AddToCart';
 
 interface ShipCardProps {
   ship: Ship;
@@ -40,6 +41,7 @@ export const ShipCard: React.FC<ShipCardProps> = ({ ship }) => (
       <Typography>Manufacturer: {ship.manufacturer}</Typography>
       <Typography>Max Speed: {ship.speed}</Typography>
       <Typography fontWeight={600}>Price: {ship.price}</Typography>
+      <AddToCartButton ship={ship} />
     </CardContent>
   </Card>
 );
