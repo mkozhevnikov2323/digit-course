@@ -14,6 +14,7 @@ import { ThemeButton } from '@/widgets/ThemeButton';
 import { ModalLoginForm, useAuth } from '@/features/Authorization';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/app/providers/redux/store';
+import { NavbarStageChip } from '@/processes/OrderProcess/ui/NavbarStageChip';
 
 export const Navbar: React.FC = () => {
   const { token, logout } = useAuth();
@@ -48,6 +49,7 @@ export const Navbar: React.FC = () => {
                 alignItems="center"
                 gap={1}
               >
+                <NavbarStageChip />
                 <Typography variant="body2">Статус: Авторизован</Typography>
 
                 <IconButton
