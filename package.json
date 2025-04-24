@@ -4,8 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "lint": "eslint . --ignore-pattern webpack/build/ --ignore-pattern vite/dist/ --ignore-pattern remix/public/build/ --ignore-pattern remix/build/ --ignore-pattern nextjs/ --ignore-pattern nextjs/styled-system/",
-    "lint:fix": "eslint . --ignore-pattern webpack/build/ --ignore-pattern vite/dist/ --ignore-pattern remix/public/build/ --ignore-pattern remix/build/ --ignore-pattern nextjs/ --ignore-pattern nextjs/styled-system/ --fix",
+    "lint": "eslint . --ignore-pattern webpack/build/ --ignore-pattern vite/dist/ --ignore-pattern remix/public/build/ --ignore-pattern remix/build/ --ignore-pattern nextjs/.next --ignore-pattern nextjs/styled-system/ --ignore-pattern cosmoship/dist/",
+    "lint:fix": "eslint . --ignore-pattern webpack/build/ --ignore-pattern vite/dist/ --ignore-pattern remix/public/build/ --ignore-pattern remix/build/ --ignore-pattern nextjs/.next --ignore-pattern nextjs/styled-system/ --ignore-pattern cosmoship/dist/ --fix",
     "pretty": "prettier --write",
     "prepare": "husky"
   },
@@ -13,7 +13,7 @@
     "*.{md,html,json,css,scss}": "npm run pretty",
     "*.{js,jsx,ts,tsx}": [
       "npm run pretty",
-      "eslint . --ignore-pattern webpack/build/ --ignore-pattern vite/dist/ --ignore-pattern remix/public/build/ --ignore-pattern remix/build/ --ignore-pattern nextjs/ --ignore-pattern nextjs/styled-system/ --fix"
+      "eslint . --ignore-pattern webpack/build/ --ignore-pattern vite/dist/ --ignore-pattern remix/public/build/ --ignore-pattern remix/build/ --ignore-pattern nextjs/.next --ignore-pattern nextjs/styled-system/ --ignore-pattern nextjs/ --ignore-pattern cosmoship/dist/ --fix"
     ]
   },
   "keywords": [],
@@ -21,17 +21,16 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@eslint/js": "^9.23.0",
-    "@eslint/migrate-config": "^1.4.1",
     "@types/node": "^22.14.0",
-    "@typescript-eslint/eslint-plugin": "^8.29.0",
-    "@typescript-eslint/parser": "^8.29.0",
-    "eslint": "^9.23.0",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-filenames": "^1.3.2",
+    "@typescript-eslint/eslint-plugin": "^8.23.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-i18next": "^6.1.1",
     "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prettier": "^5.2.5",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
