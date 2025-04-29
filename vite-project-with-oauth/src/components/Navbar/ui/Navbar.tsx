@@ -9,9 +9,18 @@ import {
 } from '@mui/material';
 import { useState } from 'react';
 import { AuthForm } from '../../AuthForm';
+import { useAuth } from '../../../providers/context/useAuth';
+import { useNavigate } from 'react-router';
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   return (
     <>
@@ -23,12 +32,21 @@ export const Navbar = () => {
           >
             Yandex OAuth Test Project
           </Typography>
-          <Button
-            color="inherit"
-            onClick={() => setOpen(true)}
-          >
-            Sign In
-          </Button>
+          {isAuthenticated ? (
+            <Button
+              color="inherit"
+              onClick={handleLogout}
+            >
+              Logout
+            </Button>
+          ) : (
+            <Button
+              color="inherit"
+              onClick={() => setOpen(true)}
+            >
+              Sign In
+            </Button>
+          )}
         </Toolbar>
       </AppBar>
       <Dialog

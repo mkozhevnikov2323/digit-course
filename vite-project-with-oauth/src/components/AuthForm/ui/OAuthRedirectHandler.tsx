@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router';
 import axios from 'axios';
 import { VITE_API_URL } from '../../../utils/env';
+import { useAuth } from '../../../providers/context/useAuth';
 
 export interface YandexAuthBody {
   code: string;
@@ -10,6 +11,7 @@ export interface YandexAuthBody {
 export default function OAuthRedirectHandler() {
   const [params] = useSearchParams();
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   useEffect(() => {
     const code = params.get('code');
@@ -21,8 +23,8 @@ export default function OAuthRedirectHandler() {
         .post(`${VITE_API_URL}/auth/yandex`, body)
         .then((response) => {
           const { token, user } = response.data;
-          localStorage.setItem('token', token);
-          localStorage.setItem('user', JSON.stringify(user));
+
+          login(token, user);
           navigate('/profile');
         })
         .catch(() => {
@@ -31,7 +33,7 @@ export default function OAuthRedirectHandler() {
     } else {
       alert('Нет кода в URL');
     }
-  }, [params, navigate]);
+  }, [params, navigate, login]);
 
   return <p>Обработка авторизации...</p>;
 }

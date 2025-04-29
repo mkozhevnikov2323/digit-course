@@ -3,6 +3,7 @@ import MainPage from '../pages/MainPage';
 import ProfilePage from '../pages/ProfilePage';
 import NotFoundPage from '../pages/NotFoundPage';
 import OAuthRedirectHandler from '../components/AuthForm/ui/OAuthRedirectHandler';
+import { ProtectedRoute } from './ProtectedRoute';
 
 export const AppRouter = () => {
   return (
@@ -13,7 +14,11 @@ export const AppRouter = () => {
       />
       <Route
         path="/profile"
-        element={<ProfilePage />}
+        element={
+          <ProtectedRoute>
+            <ProfilePage />
+          </ProtectedRoute>
+        }
       />
       <Route
         path="/auth/yandex"
