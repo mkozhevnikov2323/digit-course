@@ -6,11 +6,12 @@ import AppProviders from './providers/AppProviders.tsx';
 import CssBaseline from '@mui/material/CssBaseline';
 
 // Start MSW mocking
-// if (process.env.NODE_ENV === 'development') {
-//   import('./mocks/browser').then(({ worker }) => {
-//     worker.start();
-//   });
-// }
+if (import.meta.env.DEV) {
+  const { worker } = await import('./mocks/browser');
+  await worker.start({
+    onUnhandledRequest: 'warn',
+  });
+}
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

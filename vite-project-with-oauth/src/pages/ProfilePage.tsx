@@ -1,8 +1,14 @@
+import { Typography, Container } from '@mui/material';
+
 export default function ProfilePage() {
+  const user = JSON.parse(localStorage.getItem('user') || '{}');
+
   return (
     <div>
-      <h1>Profile Page</h1>
-      <p>User profile...</p>
+      <Container>
+        <Typography variant="h4">Profile Page</Typography>
+        <Typography>Имя: {user.name}</Typography>
+      </Container>
     </div>
   );
 }

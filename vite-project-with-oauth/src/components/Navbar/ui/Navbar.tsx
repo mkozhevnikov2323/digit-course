@@ -21,13 +21,13 @@ export const Navbar = () => {
             variant="h6"
             sx={{ flexGrow: 1 }}
           >
-            Мой Проект
+            Yandex OAuth Test Project
           </Typography>
           <Button
             color="inherit"
             onClick={() => setOpen(true)}
           >
-            Войти
+            Sign In
           </Button>
         </Toolbar>
       </AppBar>
@@ -35,7 +35,7 @@ export const Navbar = () => {
         open={open}
         onClose={() => setOpen(false)}
       >
-        <DialogTitle>Авторизация</DialogTitle>
+        <DialogTitle>Authorization</DialogTitle>
         <DialogContent>
           <AuthForm />
         </DialogContent>
