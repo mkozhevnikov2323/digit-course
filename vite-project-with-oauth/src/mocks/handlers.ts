@@ -9,7 +9,7 @@ export const handlers = [
       return HttpResponse.json(
         {
           token: 'mock-token',
-          user: { name: 'Yandex User', id: 1 },
+          user: { name: 'Yandex User', id: 1, role: 'admin' },
         },
         { status: 200 },
       );

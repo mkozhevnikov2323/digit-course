@@ -1,8 +1,9 @@
 import { createContext, useState, useEffect, ReactNode } from 'react';
 
-type User = {
+export type User = {
   id: number;
   name: string;
+  role: 'admin' | 'user';
 };
 
 type AuthContextType = {
